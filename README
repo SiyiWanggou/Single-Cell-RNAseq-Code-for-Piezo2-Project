@@ -12,6 +12,8 @@
   features.txt, re-annotated features according to Monocle2 and Monocle3-alpha.
   MB_signature_mTOR_Cell_Cycle.gmt.txt, gene signature for enrichment analysis and cell cylce phase identification.
   pData_Sox2_positive_cells.txt, pre-prepared results and information to regenrate the results of Sox2+ MB cells. Most information of this file will be created during the pipeline. For easy to regenerate the results, we provided the file directly here.
+  markers_of_each_sub_cluster_17_clusters.txt, pre-prepared feature genes of each cluster. For principalGraphTest() takes more than 48 hours to generate the results, we uploaded the result file for easy.
+  
   
   To regenrate the results, we need to install some certain dependent libraries and packages.The packages that need to be installed are listed below:
   "Matrix","Monocle2","Monocle3-alpha","ggthemes","RColorBrewer","VGAM","Cairo","dplyr",
