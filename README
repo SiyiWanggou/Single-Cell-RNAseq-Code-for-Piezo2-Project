@@ -20,5 +20,5 @@
   "AUCell","GSEABase","biomaRt","NMF","pheatmap","Seurat","clusterProfiler","org.Mm.eg.db",
   "ggplot2","ggridges"
   
-  The code used for this project is attached as code.R, and the explanation and annotation of these codes are stored at 
+  The code used for this project is attached as code.R, and the annotation of these codes are stored at 
   Single-Cell-RNAseq-Code-for-Piezo2-Project/Wiki.
