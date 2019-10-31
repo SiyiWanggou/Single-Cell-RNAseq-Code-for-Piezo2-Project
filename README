@@ -1,6 +1,6 @@
   This code repository is supportive for single cell RNAseq analysis for Piezo2 project from Xi Huang's Lab, Sickkids, CA. The raw-data of this project could be downloaded from GSEXXXX (link). This code could be used to reproduce the results that are published on (link). 
   
-  The pipelines we used for single cell RNAseq analysis are majorly based on Monocle2, Monocle3-alpha, Seurat and AUCells from SCENIC. Except Monocle2, all the pinelines are excuted on Linux system. Monocle2 is majorly used for pseudotime and trajectory analysis. Monocle3-alpha is used for UMAP dimension reduction and cell type identification. Seurat is used for Cell Cycle identification. SCINE is used for single cell gene-set enrichment analysis.
+  The pipelines we used for single cell RNAseq analysis are majorly based on Monocle2, Monocle3-alpha, Seurat and AUCells from SCENIC. Except Monocle2, all the pinelines are excuted on Linux system. Monocle2 is majorly used for pseudotime and trajectory analysis. Monocle3-alpha is used for UMAP dimension reduction and cell type identification. Seurat is used for Cell Cycle identification. SCENIC is used for single cell gene-set enrichment analysis.
   The links of these major pinelines are listed as below:
   Monocle2, http://cole-trapnell-lab.github.io/monocle-release/docs/
   Monocle3-alpha, http://cole-trapnell-lab.github.io/monocle-release/monocle3/
