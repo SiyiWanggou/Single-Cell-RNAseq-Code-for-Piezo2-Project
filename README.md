@@ -1,10 +1,12 @@
-# Browsing Sox2+ BTICs in in Math1-Cre;SmoM2 or Math1-Cre;SmoM2:Piezo2-fl/fl SHH MB mice.
+# Browsing Sox2+ BTICs in Math1-Cre;SmoM2 and Math1-Cre;SmoM2:Piezo2-fl/fl SHH MB mice.
 
 Welcome to Xi Huang Lab Piezo2 scRNAseq project.
 
-
+![[RNA velocity of Sox2+ BTICs in Math1-Cre;SmoM2 SHH MB mouse]](https://github.com/SiyiWanggou/Single-Cell-RNAseq-Code-for-Piezo2-Project/blob/master/results/Velocity_UMAP_MB_Sox2_WT.png "RNA velocity of Sox2+ BTICs in Math1-Cre;SmoM2 SHH MB mouse")
 
 This code repository is supportive for single cell RNAseq analysis for Piezo2 project from Xi Huang Lab, Sickkids, CA. The raw-data of this project could be downloaded from GEO with BioProject accession ID PRJNA588007 (to be released) . This code could be used to reproduce the scRNAseq results of Sox2+ BTICs in the paper titled as **Piezo2 governs blood-tumor-barrier and tumor quiescence depth to mask chemosensitivity** that are under review. 
+
+
 
 
 
