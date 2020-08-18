@@ -1,4 +1,4 @@
-# Browsing Sox2+ BTICs in Math1-Cre;SmoM2 and Math1-Cre;SmoM2:Piezo2-fl/fl SHH MB mice.
+# Browsing Sox2+ BTICs in Math1-Cre;SmoM2 and Math1-Cre;SmoM2;Piezo2-fl/fl SHH MB mice.
 
 Welcome to Xi Huang Lab Piezo2 scRNAseq project.
 
