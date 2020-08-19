@@ -110,6 +110,8 @@ dev.off()
 ###Dot plot of marker genes in Sox2 BTIC.Top 10 genes for each clusters
 Gene_list_WT <- unique(top10_WT$gene)
 Gene_list_KO <- unique(top10_KO$gene)
+
+#### Math1-Cre;SmoM2
 p_WT <- DotPlot(MB_cells_Sox2_WT,features = as.character(Gene_list_WT),scale.by = 'radius',
         col.min = 0) +
   RotatedAxis() +
@@ -118,6 +120,8 @@ p_WT <- DotPlot(MB_cells_Sox2_WT,features = as.character(Gene_list_WT),scale.by 
         panel.grid.minor = element_blank(),
         panel.border = element_rect(colour = "black", fill=NA, size=1)) +
   scale_color_gradient2(midpoint=0.8,low="black",mid="orange",high="red",space="grey")
+
+#### Math1-Cre;SmoM2;Piezo2-fl/fl
 p_KO <- DotPlot(MB_cells_Sox2_KO,features = as.character(Gene_list_KO),scale.by = 'radius',
                 col.min = 0) +
   RotatedAxis() +
@@ -126,6 +130,8 @@ p_KO <- DotPlot(MB_cells_Sox2_KO,features = as.character(Gene_list_KO),scale.by 
         panel.grid.minor = element_blank(),
         panel.border = element_rect(colour = "black", fill=NA, size=1)) +
   scale_color_gradient2(midpoint=0.8,low="black",mid="orange",high="red",space="grey")
+
+#### Figure plotting
 Cairo(file="Dotplot_of_each_cluster_in_MB_cells_Sox2.png",type="png",units="in",bg="white",width=12,height=10,pointsize=14,dpi=300)
 plot_grid(p_WT,p_KO,labels = c("Math1-Cre;SmoM2","Math1-Cre;SmoM2;Piezo2-fl/fl"),nrow = 2)
 dev.off()
@@ -135,10 +141,16 @@ dev.off()
 
 ```R
 ###Plot feature gene expression on UMAP. Customize your target genes in gene_list.
-gene_list <- c("Nhlh1","Sstr2","Tubb3","Top2a","Mki67","Cdk1","Cenpa","Ung","Mcm2","Pcna","Olig2","Cdc20")
+gene_list <-c("Nhlh1","Sstr2","Tubb3","Top2a","Mki67","Cdk1","Cenpa","Ung","Mcm2","Pcna","Olig2","Cdc20")
+
+#### Math1-Cre;SmoM2
 p_WT <- FeaturePlot(MB_cells_Sox2_WT, features = gene_list,pt.size = 1,cols = c("grey","Red"),order = TRUE, min.cutoff = NA, max.cutoff = NA, reduction = NULL,split.by = NULL, shape.by = NULL, slot = "counts", blend = FALSE, blend.threshold = 1, label = FALSE, label.size = 2.5,repel = FALSE, ncol = NULL, combine = TRUE, coord.fixed = FALSE,
 by.col = TRUE, sort.cell = FALSE) 
+
+#### Math1-Cre;SmoM2;Piezo2-fl/fl
 p_KO <- FeaturePlot(MB_cells_Sox2_KO, features = gene_list,pt.size = 1,cols = c("grey","Red"),order = TRUE, min.cutoff = NA, max.cutoff = NA, reduction = NULL,split.by = NULL, shape.by = NULL, slot = "counts", blend = FALSE, blend.threshold = 1, label = FALSE, label.size = 2.5,repel = FALSE, ncol = NULL, combine = TRUE, coord.fixed = FALSE, by.col = TRUE, sort.cell = FALSE) 
+
+#### Math1-Cre;SmoM2 plotting
 Cairo(file="Feature_plot_of_MB_cells_Sox2_WT.png",type="png",units="in",bg="white",width=16,height=10,pointsize=14,dpi=300)
 p_WT
 dev.off()
@@ -147,6 +159,7 @@ dev.off()
 ![Feature_plot_of_MB_cells_Sox2_WT.png](https://github.com/SiyiWanggou/Single-Cell-RNAseq-Code-for-Piezo2-Project/blob/master/results/Feature_plot_of_MB_cells_Sox2_WT.png?raw=true)
 
 ```R
+#### Math1-Cre;SmoM2;Piezo2-fl/fl plotting
 Cairo(file="Feature_plot_of_MB_cells_Sox2_KO.png",type="png",units="in",bg="white",width=16,height=10,pointsize=14,dpi=300)
 p_KO
 dev.off()
@@ -174,6 +187,7 @@ cell.colors_KO <- ident.colors_KO[Idents(object = MB_cells_Sox2_KO)]
 names(x = cell.colors_KO) <- colnames(x = MB_cells_Sox2_KO)
 
 ###Embedding UMAP to RNA velocity.Regenerate of Figure 3e.
+#### Math1-Cre;SmoM2
 Cairo(file="Velocity_UMAP_MB_Sox2_WT.png",type="png",units="in",bg="white",width=5,height=5,pointsize=5,dpi=300)
 show.velocity.on.embedding.cor(emb = Embeddings(object = MB_cells_Sox2_WT,reduction = "umap"),vel = Tool(object = MB_cells_Sox2_WT, slot = "RunVelocity"),n = 200, scale = "sqrt",cell.colors = ac(x = cell.colors_WT, alpha = 1.0), cex = 3, arrow.scale = 1.5, show.grid.flow = TRUE, min.grid.cell.mass = 1, grid.n = 50, arrow.lwd = 1.25,do.par = FALSE, cell.border.alpha = 0,n.cores = 14)
 dev.off()
@@ -184,8 +198,10 @@ dev.off()
 
 
 ```R
+#### Math1-Cre;SmoM2;Piezo2-fl/fl
 Cairo(file="Velocity_UMAP_MB_Sox2_KO.png",type="png",units="in",bg="white",width=5,height=5,pointsize=5,dpi=300)
 show.velocity.on.embedding.cor(emb = Embeddings(object = MB_cells_Sox2_KO,reduction = "umap"),vel = Tool(object = MB_cells_Sox2_KO, slot = "RunVelocity"),n = 200,scale = "sqrt",cell.colors = ac(x = cell.colors_KO, alpha = 1.0),cex = 3, arrow.scale = 1.5, show.grid.flow = TRUE, min.grid.cell.mass = 1, grid.n = 50,arrow.lwd = 1.25,do.par = FALSE, cell.border.alpha = 0,n.cores = 14)
+dev.off()
 ```
 
 ![Velocity_UMAP_MB_Sox2_KO.png](https://github.com/SiyiWanggou/Single-Cell-RNAseq-Code-for-Piezo2-Project/blob/master/results/Velocity_UMAP_MB_Sox2_KO.png?raw=true)
@@ -232,6 +248,7 @@ p_WT <- ggplot(data=RNAvelocity_combined,aes(x=pseudotime,y=RNAvelocity)) +
         panel.border = element_rect(colour = "black", fill=NA, size=1),
         panel.background = element_rect(fill = "white")) +
   labs(x="Streched trajectory",y="Mki67 u residuals")
+
 ####Math1-Cre;SmoM2;Piezo2-fl/fl
 xi <- median(Embeddings(object = MB_cells_Sox2_KO,reduction = "umap")[,1])
 yi <- median(Embeddings(object = MB_cells_Sox2_KO,reduction = "umap")[,2])
@@ -254,6 +271,7 @@ p_KO <- ggplot(data=RNAvelocity_combined,aes(x=pseudotime,y=RNAvelocity)) +
         panel.border = element_rect(colour = "black", fill=NA, size=1),
         panel.background = element_rect(fill = "white")) +
   labs(x="Streched trajectory",y="Mki67 u residuals")
+
 ####Plot MKi67 velocity along trajectory
 Cairo(file="Mki67_velocity_comparison_in_MB_cells_Sox2.png",type="png",units="in",bg="white",width=12,height=8,pointsize=14,dpi=300)
 plot_grid(p_WT,p_KO,labels = c("Math1-Cre;SmoM2","Math1-Cre;SmoM2;Piezo2-fl/fl"),nrow = 2)
