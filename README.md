@@ -37,11 +37,9 @@ The pipelines for our single cell RNAseq analysis are based on Cellranger, Veloc
 
 ## Objects
 
-The Seurat objects of Sox2+ BTICs from Math1-Cre;SmoM2 and Math1-Cre;SmoM2;Piezo2-fl/fl could be downloaded from https://github.com/SiyiWanggou/Single-Cell-RNAseq-Code-for-Piezo2-Project/blob/master/Objects/MB_cells_Sox2_WT.Robj and https://github.com/SiyiWanggou/Single-Cell-RNAseq-Code-for-Piezo2-Project/blob/master/Objects/MB_cells_Sox2_KO.Robj.
+The Seurat objects of Sox2+ BTICs from Math1-Cre;SmoM2 and Math1-Cre;SmoM2;Piezo2-fl/fl could be obtained by contacting the authors.
 
-The combined Sox2+ BTICs monocle object from both genotype could be downloaded from xxxxxx.
-
-
+The combined Sox2+ BTICs monocle object from both genotype could also be obtained by contacting the authors.
 
 ## Code
 
@@ -225,7 +223,7 @@ gene.relative.velocity.estimates(GetAssayData(MB_cells_Sox2_KO,slot = "data", as
 ![Mki67_Velocity_Sox2_MB_KO.png](https://github.com/SiyiWanggou/Single-Cell-RNAseq-Code-for-Piezo2-Project/blob/master/results/Mki67_Velocity_Sox2_MB_KO.png?raw=true)
 
 ```R
-###Comparison of Mki67 velocity pattern.
+###Comparison of Mki67 velocity pattern.(recommed reading to https://jef.works/blog/2020/01/14/rna_velocity_analysis_tutorial_tips/)
 ####Math1-Cre;SmoM2
 xi <- median(Embeddings(object = MB_cells_Sox2_WT,reduction = "umap")[,1])
 yi <- median(Embeddings(object = MB_cells_Sox2_WT,reduction = "umap")[,2])
