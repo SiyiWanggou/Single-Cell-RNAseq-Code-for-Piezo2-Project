@@ -1,9 +1,11 @@
 # Browsing Sox2+ BTICs in Math1-Cre;SmoM2 and Math1-Cre;SmoM2;Piezo2-fl/fl SHH MB mice
 #### **Welcome to Xi Huang Lab Piezo2 scRNAseq project!**
 
+Link to Xi Huang Lab:https://lab.research.sickkids.ca/huang/
+
 This code repository is supportive for single cell RNAseq analysis for Piezo2 project from Xi Huang Lab, Sickkids, CA. This code could be used to reproduce the scRNAseq results of Sox2+ BTICs in the paper titled as **Piezo2 governs blood-tumor-barrier and tumor quiescence depth to mask therapeutic vulnerability** that is under review. 
 
-![Velocity_UMAP_MB_Sox2_WT.png](https://github.com/SiyiWanggou/Single-Cell-RNAseq-Code-for-Piezo2-Project/blob/master/results/Velocity_UMAP_MB_Sox2_WT.png?raw=true)
+![Titile Figure.png](https://github.com/SiyiWanggou/Single-Cell-RNAseq-Code-for-Piezo2-Project/blob/master/results/Titile%20Figure.png?raw=true)
 
 
 
@@ -73,6 +75,8 @@ p_KO <- DimPlot(MB_cells_Sox2_KO, dims = c(1,2), reduction = "umap",
                 pt.size = 2.5, split.by = NULL, group.by = "Ident", 
                 shape.by = NULL, order = NULL,
                 label = TRUE, label.size = 4)
+
+###Plot UMAP for both genotypes
 Cairo(file="UMAP_clusters.png",type="png",units="in",bg="white",width=17,height=6,pointsize=114,dpi=300)
 plot_grid(p_WT,p_KO,labels = c("Math1-Cre;SmoM2","Math1-Cre;SmoM2;Piezo2-fl/fl"), label_size = 14)
 dev.off()
@@ -85,12 +89,16 @@ dev.off()
 ###Find marker features for each cluster in Sox2+ BTIC.
 MB_cells_Sox2_WT.markers <- FindAllMarkers(MB_cells_Sox2_WT,only.pos = TRUE,min.pct = 0.25,logfc.threshold = 0.5,test.use = "roc",pseudocount.use = 1,verbose = TRUE)
 MB_cells_Sox2_KO.markers <- FindAllMarkers(MB_cells_Sox2_KO,only.pos = TRUE,min.pct = 0.25,logfc.threshold = 0.5,test.use = "roc",pseudocount.use = 1,verbose = TRUE)
+
 ###Extract Top10 feature genes of Sox2 BTIC
 top10_WT <- MB_cells_Sox2_WT.markers %>% group_by(cluster) %>% top_n(n = 10,wt = avg_diff)
 top10_KO <- MB_cells_Sox2_KO.markers %>% group_by(cluster) %>% top_n(n = 10,wt = avg_diff)
+
 ###Plot marker genes for each clusters in Sox2 BTIC.Top 10 genes for each clusters
 p_WT <- DoHeatmap(MB_cells_Sox2_WT,features = top10_WT$gene,group.by = "Ident") + NoLegend()
 p_KO <- DoHeatmap(MB_cells_Sox2_KO,features = top10_KO$gene,group.by = "Ident") + NoLegend()
+
+###Plot heatmap of biomarkers
 Cairo(file="Heatmap_of_Biomarkers_for_MB_cells_Sox2.png",type="png",units="in",bg="white",width=14,height=8,pointsize=114,dpi=300)
 plot_grid(p_WT,p_KO,labels = c("Math1-Cre;SmoM2","Math1-Cre;SmoM2;Piezo2-fl/fl"))
 dev.off()
